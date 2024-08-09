@@ -1,4 +1,5 @@
 def pascal_triangle(n):
+    '''check pascals triangle'''
     triangle = []
 
     for i in range(n):
