@@ -1,12 +1,14 @@
 #!/usr/bin/python3
 '''
-creating a function that returns pascals triangle
+creating a function
+that returns pascals triangle
 '''
 
 
 def pascal_triangle(k):
     '''returns an
-    array representing pascals triangle'''
+    array representing pascals triangle
+    '''
     if k <= 0:
         return []
 
