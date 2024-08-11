@@ -5,7 +5,8 @@ creating a function that returns pascals triangle
 
 
 def pascal_triangle(k):
-    '''returns an array representing pascals triangle'''
+    '''returns an
+    array representing pascals triangle'''
     if k <= 0:
         return []
 
