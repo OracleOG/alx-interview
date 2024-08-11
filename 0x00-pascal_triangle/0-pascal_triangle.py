@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 '''
 creating a function that returns pascals triangle
 '''
