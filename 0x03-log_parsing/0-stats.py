@@ -55,8 +55,6 @@ for line in sys.stdin:
         if count == 10:
             print_metrics()
             count = 0
-    else:
-        print("Line did not match!")  # Debugging statement
 
 # Print remaining metrics if the script ends before reaching 10 lines.
 if count > 0:
