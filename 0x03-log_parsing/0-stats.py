@@ -43,7 +43,6 @@ for line in sys.stdin:
     line = line.strip()
     match = log_pattern.match(line)
     if match:
-        print("Line matched!")  # Debugging statement
         status_codex = match.group(3)
         file_sizex = int(match.group(4))
 
@@ -52,8 +51,6 @@ for line in sys.stdin:
             status_code[status_codex] += 1
 
         count += 1
-
-        print_metrics()  # Print metrics after processing the line
 
         if count == 10:
             print_metrics()
