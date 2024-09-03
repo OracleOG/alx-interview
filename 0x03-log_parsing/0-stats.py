@@ -21,6 +21,7 @@ status_code = {'200': 0, '301': 0, '400': 0, '401': 0,
 file_size = 0
 count = 0
 
+
 def print_metrics():
     '''Prints the accumulated metrics.'''
     print(f"File size: {file_size}")
@@ -29,10 +30,12 @@ def print_metrics():
             print(f"{code}: {status_code[code]}")
     sys.stdout.flush()  # Ensure output is flushed immediately
 
+
 def handle_signal(sig, frame):
     '''Handles the SIGINT signal to print the metrics before exiting.'''
     print_metrics()
     sys.exit(0)
+
 
 signal.signal(signal.SIGINT, handle_signal)
 
