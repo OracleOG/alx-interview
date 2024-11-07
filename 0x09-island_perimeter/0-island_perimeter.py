@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 '''A script that returns the perimeter of the island described in grid.'''
 
+
 def island_perimeter(grid):
+    '''function that describes a grid'''
     rows = len(grid)
     cols = len(grid[0])
     perimeter = 0
