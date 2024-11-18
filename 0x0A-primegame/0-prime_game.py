@@ -1,4 +1,4 @@
-#!/use/bin/python3
+#!/usr/bin/python3
 """
 a module that determines who the winner of a game is.
 """
