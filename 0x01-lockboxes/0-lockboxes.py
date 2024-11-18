@@ -24,3 +24,4 @@ def canUnlockAll(boxes):
                 leftover.append(key)
 
     return len(keys) == len(boxes)
+    

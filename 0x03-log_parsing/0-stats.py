@@ -38,8 +38,9 @@ def handle_signal(sig, frame):
 
 
 signal.signal(signal.SIGINT, handle_signal)
-
+line_count = 0
 for line in sys.stdin:
+    line_count += 1
     line = line.strip()
     match = log_pattern.match(line)
     if match:
@@ -55,7 +56,10 @@ for line in sys.stdin:
         if count == 10:
             print_metrics()
             count = 0
+    else:
+        print(f'Line {line_count} didnt match')
 
 # Print remaining metrics if the script ends before reaching 10 lines.
 if count > 0:
+    print(count)
     print_metrics()
