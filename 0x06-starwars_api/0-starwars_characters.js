@@ -8,13 +8,25 @@ function getStarWarsCharacters(movieId) {
   // Make a GET request to the /films/{id}/ endpoint to fetch movie data
   request(`https://swapi.dev/api/films/${movieId}/`, function(error, response, body) {
     // If there's an error or if the movie ID is invalid, return
-    if (error || response.statusCode !== 200) {
-      console.log("Error: Movie ID not found.");
+    if (error) {
+      console.error("Request error:", error);
+      return;
+    }
+    
+    // If the response status is not 200, print an error
+    if (response.statusCode !== 200) {
+      console.log("Error: Movie not found.");
       return;
     }
 
     // Parse the movie data
     const movieData = JSON.parse(body);
+
+    // Check if the movie has a characters list, if not, handle accordingly
+    if (!movieData.characters || movieData.characters.length === 0) {
+      console.log("No characters found for this movie.");
+      return;
+    }
 
     // Extract the list of character URLs
     const characterUrls = movieData.characters;
@@ -22,7 +34,12 @@ function getStarWarsCharacters(movieId) {
     // Fetch each character's details and print their name
     characterUrls.forEach(function(url) {
       request(url, function(error, response, body) {
-        if (error || response.statusCode !== 200) {
+        if (error) {
+          console.error("Error fetching character:", error);
+          return;
+        }
+
+        if (response.statusCode !== 200) {
           console.log("Error: Could not fetch character data.");
           return;
         }
