@@ -4,7 +4,7 @@ a script that determines if a given data set represents a valid UTF-8 encoding.
 """
 
 
-def validateUTF8(data):
+def validUTF8(data):
     '''
     function that validates a utf-8 encoding
     '''
