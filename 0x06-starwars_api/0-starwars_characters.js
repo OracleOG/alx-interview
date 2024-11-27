@@ -2,11 +2,15 @@
 
 
 const request = require('request');
+//
+//const movieId = process.argv[2];
+//
+//const url = 
 
 // Function to fetch and print characters from the Star Wars API
 function getStarWarsCharacters(movieId) {
   // Make a GET request to the /films/{id}/ endpoint to fetch movie data
-  request(`https://swapi.dev/api/films/${movieId}/`, function(error, response, body) {
+  request(`https://swapi-api.alx-tools.com/api/films/${movieId}/`, function(error, response, body) {
     // If there's an error or if the movie ID is invalid, return
     if (error) {
       console.error("Request error:", error);
@@ -47,6 +51,7 @@ function getStarWarsCharacters(movieId) {
         // Parse the character data and print the name
         const characterData = JSON.parse(body);
         console.log(characterData.name);
+        resolve()
       });
     });
   });
